@@ -5,6 +5,7 @@
  */
 package View;
 
+import Model.Model;
 import java.awt.*;
 import javax.swing.*;
 
@@ -12,22 +13,26 @@ import javax.swing.*;
  *
  * @author tjell
  */
-public class View extends JFrame {
+public class View  {
     //------ Variables ------\\
-    private NewAccount newAcc = new NewAccount();
-    private ExistingAccount oldAcc = new ExistingAccount();
-    private AccountList list = new AccountList();
+    private NewAccount newAcc;
+    private ExistingAccount oldAcc;
+    private AccountList list;
     
     //------ Constructors ------\\
     public  View()
     {
-        super();
-        setLayout(new GridLayout(2,1));
-        add(newAcc);
-        add(oldAcc);
-        add(list);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(950, 750);
-        setVisible(true);
+        newAcc = new NewAccount();
+        oldAcc = new ExistingAccount();
+        list = new AccountList();
+        
+    }
+    
+    public  View(Model m)
+    {
+        newAcc = new NewAccount(m);
+        oldAcc = new ExistingAccount(m);
+        list = new AccountList(m);
+        
     }
 }

@@ -5,10 +5,12 @@
  */
 package Model;
 
+import java.util.Observable;
+
 /**
  *
  * @author tjell
  */
-public class Model {
+public class Model extends Observable{
     
 }
