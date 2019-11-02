@@ -10,5 +10,16 @@ package Controller;
  * @author tjell
  */
 public class Controller {
+    //------ Variables ------\\
+    private NewAccountController newAcc;
+    private ExistingAccountController oldAcc;
+    private AccountListController list;
     
+    //------ Constructors ------\\
+    /*
+        newAcc = new NewAccountController();
+        oldAcc = new ExistingAccountController();
+        list = new AccountListController();
+        
+    */
 }

@@ -41,8 +41,41 @@ public class ExistingAccount extends JFrame implements Observer {
         
         //--- Add first label to panel ---\\
         getAccount = new JLabel("<html><div style = 'text-align: center;'><font size = 5><b>Select Account</b></font></div></html>");
-        getAccount.setBounds(25, 5, 150, 40);
+        getAccount.setBounds(15, 5, 120, 40);
         panel.add(getAccount);
+        
+        //--- Add combobox to panel ---\\
+        select.setBounds(145, 15, 235, 35);
+        panel.add(select);
+        
+        //--- Add deposit text field to panel ---\\
+        depositAmount.setBounds(15, 65, 230, 40);
+        panel.add(depositAmount);
+        
+        //--- Add deposit button to panel ---\\
+        deposit.setBounds(265, 65, 100, 40);
+        panel.add(deposit);
+        
+        //--- Add withdrawl text field to panel ---\\
+        withdrawlAmount.setBounds(15, 125, 230, 40);
+        panel.add(withdrawlAmount);
+        
+        //--- Add withdrawl button to panel ---\\
+        withdrawl.setBounds(265, 125, 100, 40);
+        panel.add(withdrawl);
+        
+        //--- Add second label to panel ---\\
+        balance = new JLabel("<html><div style = 'text-align: center;'><font size = 5><b>Balance</b></font></div></html>");
+        balance.setBounds(15, 185, 120, 40);
+        panel.add(balance);
+        
+        //--- Add balance text field to panel ---\\
+        accountBalance.setBounds(100, 185, 120, 40);
+        panel.add(accountBalance);
+        
+        //--- Add delete button to panel ---\\
+        delete.setBounds(290, 210, 90, 40);
+        panel.add(delete);
         
         //--- Add paenel to frame ---\\
         add(panel);
@@ -93,6 +126,7 @@ public class ExistingAccount extends JFrame implements Observer {
         panel.add(balance);
         
         //--- Add balance text field to panel ---\\
+        accountBalance.setEditable(false);
         accountBalance.setBounds(100, 185, 120, 40);
         panel.add(accountBalance);
         
@@ -112,4 +146,34 @@ public class ExistingAccount extends JFrame implements Observer {
     public void update(Observable o, Object arg) {
         repaint();
     }
+
+    public JComboBox getSelect() {
+        return select;
+    }
+
+    public JTextField getDepositAmount() {
+        return depositAmount;
+    }
+
+    public JButton getDeposit() {
+        return deposit;
+    }
+
+    public JTextField getWithdrawlAmount() {
+        return withdrawlAmount;
+    }
+
+    public JButton getWithdrawl() {
+        return withdrawl;
+    }
+
+    public JTextField getAccountBalance() {
+        return accountBalance;
+    }
+
+    public JButton getDelete() {
+        return delete;
+    }
+    
+    
 }

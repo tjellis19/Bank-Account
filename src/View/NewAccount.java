@@ -22,7 +22,6 @@ public class NewAccount extends JFrame implements Observer {
     private JTextField deposit = new JTextField();
     private JButton create = new JButton("Create");
     private JComboBox accountType = new JComboBox();
-    private JMenu menu = new JMenu();
     private JLabel nameLabel, typeLabel, depositLabel;
     
     //------ Constructors ------\\
@@ -132,4 +131,22 @@ public class NewAccount extends JFrame implements Observer {
     public void update(Observable o, Object arg) {
         repaint();
     }
+
+    public JTextField getAccountName() {
+        return accountName;
+    }
+
+    public JTextField getDeposit() {
+        return deposit;
+    }
+
+    public JButton getCreate() {
+        return create;
+    }
+
+    public JComboBox getAccountType() {
+        return accountType;
+    }
+    
+    
 }

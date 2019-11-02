@@ -35,4 +35,19 @@ public class View  {
         list = new AccountList(m);
         
     }
+    
+    //------ additional Methods ------\\
+
+    public NewAccount getNewAcc() {
+        return newAcc;
+    }
+
+    public ExistingAccount getOldAcc() {
+        return oldAcc;
+    }
+
+    public AccountList getList() {
+        return list;
+    }
+    
 }

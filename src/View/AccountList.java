@@ -17,6 +17,7 @@ import javax.swing.*;
 public class AccountList extends JFrame implements Observer {
      //------ Variables ------\\
     private JPanel panel = new JPanel();
+    private JTextArea list = new JTextArea();
     
      //------ Constructors ------\\
     public AccountList()
@@ -49,6 +50,12 @@ public class AccountList extends JFrame implements Observer {
         panel.setLayout(null);
         panel.setBorder(BorderFactory.createLineBorder(Color.black, 2));
         
+        //--- Add text area to panel ---\\
+        list.setEditable(false);
+        list.setText(text());
+        list.setBounds(10, 10, 400, 580);
+        panel.add(list);
+        
         //--- Add paenel to frame ---\\
         add(panel);
         setVisible(true);
@@ -61,4 +68,16 @@ public class AccountList extends JFrame implements Observer {
     public void update(Observable o, Object arg) {
         repaint();
     }
+    
+    private String text()
+    {
+        String text = "Nothing yet!!";
+        return text;
+    }
+
+    public JTextArea getList() {
+        return list;
+    }
+    
+    
 }

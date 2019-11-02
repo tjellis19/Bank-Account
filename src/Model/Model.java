@@ -5,12 +5,39 @@
  */
 package Model;
 
-import java.util.Observable;
+import java.util.*;
 
 /**
  *
  * @author tjell
  */
 public class Model extends Observable{
+    private ArrayList<String> accounts, types, balances;
+    
+    
+    //------ Additional Methods ------\\
+    public ArrayList<String> getAccounts() {
+        return accounts;
+    }
+
+    public void setAccounts(ArrayList<String> accounts) {
+        this.accounts = accounts;
+    }
+
+    public ArrayList<String> getTypes() {
+        return types;
+    }
+
+    public void setTypes(ArrayList<String> types) {
+        this.types = types;
+    }
+
+    public ArrayList<String> getBalances() {
+        return balances;
+    }
+
+    public void setBalances(ArrayList<String> balances) {
+        this.balances = balances;
+    }
     
 }
