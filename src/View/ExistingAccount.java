@@ -17,11 +17,19 @@ import javax.swing.*;
 public class ExistingAccount extends JFrame implements Observer {
      //------ Variables ------\\
     private JPanel panel = new JPanel();
+    private JComboBox select = new JComboBox();
+    private JLabel getAccount, balance;
+    private JTextField depositAmount = new JTextField();
+    private JButton deposit = new JButton("Deposit");
+    private JTextField withdrawlAmount = new JTextField();
+    private JButton withdrawl = new JButton("Withdrawl");
+    private JTextField accountBalance = new JTextField();
+    private JButton delete = new JButton("Delete");
 
     //------ Constructors ------\\
     public ExistingAccount()
     {
-        super("Delete Existing Account");
+        super("Access Existing Account");
         setSize(425, 305);
         setLocation(50, 370);
         
@@ -30,6 +38,11 @@ public class ExistingAccount extends JFrame implements Observer {
         panel.setBackground(Color.white);
         panel.setLayout(null);
         panel.setBorder(BorderFactory.createLineBorder(Color.black, 2));
+        
+        //--- Add first label to panel ---\\
+        getAccount = new JLabel("<html><div style = 'text-align: center;'><font size = 5><b>Select Account</b></font></div></html>");
+        getAccount.setBounds(25, 5, 150, 40);
+        panel.add(getAccount);
         
         //--- Add paenel to frame ---\\
         add(panel);
@@ -39,7 +52,7 @@ public class ExistingAccount extends JFrame implements Observer {
     
      public ExistingAccount(Model m)
     {
-        super("Delete New Account");
+        super("Access Existing Account");
         setSize(425, 305);
         setLocation(50, 370);
         
@@ -48,6 +61,44 @@ public class ExistingAccount extends JFrame implements Observer {
         panel.setBackground(Color.white);
         panel.setLayout(null);
         panel.setBorder(BorderFactory.createLineBorder(Color.black, 2));
+        
+        //--- Add first label to panel ---\\
+        getAccount = new JLabel("<html><div style = 'text-align: center;'><font size = 5><b>Select Account</b></font></div></html>");
+        getAccount.setBounds(15, 5, 120, 40);
+        panel.add(getAccount);
+        
+        //--- Add combobox to panel ---\\
+        select.setBounds(145, 15, 235, 35);
+        panel.add(select);
+        
+        //--- Add deposit text field to panel ---\\
+        depositAmount.setBounds(15, 65, 230, 40);
+        panel.add(depositAmount);
+        
+        //--- Add deposit button to panel ---\\
+        deposit.setBounds(265, 65, 100, 40);
+        panel.add(deposit);
+        
+        //--- Add withdrawl text field to panel ---\\
+        withdrawlAmount.setBounds(15, 125, 230, 40);
+        panel.add(withdrawlAmount);
+        
+        //--- Add withdrawl button to panel ---\\
+        withdrawl.setBounds(265, 125, 100, 40);
+        panel.add(withdrawl);
+        
+        //--- Add second label to panel ---\\
+        balance = new JLabel("<html><div style = 'text-align: center;'><font size = 5><b>Balance</b></font></div></html>");
+        balance.setBounds(15, 185, 120, 40);
+        panel.add(balance);
+        
+        //--- Add balance text field to panel ---\\
+        accountBalance.setBounds(100, 185, 120, 40);
+        panel.add(accountBalance);
+        
+        //--- Add delete button to panel ---\\
+        delete.setBounds(290, 210, 90, 40);
+        panel.add(delete);
         
         //--- Add paenel to frame ---\\
         add(panel);
