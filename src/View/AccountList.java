@@ -16,8 +16,10 @@ import javax.swing.*;
  */
 public class AccountList extends JFrame implements Observer {
      //------ Variables ------\\
+    private Model m;
     private JPanel panel = new JPanel();
     private JTextArea list = new JTextArea();
+    private String text;
     
      //------ Constructors ------\\
     public AccountList()
@@ -43,6 +45,7 @@ public class AccountList extends JFrame implements Observer {
         super("Account List");
         setSize(425, 605);
         setLocation(485, 50);
+        this.m = m;
         
         //--- Customize panel ---\\
         panel.setSize(425, 605);
@@ -67,6 +70,12 @@ public class AccountList extends JFrame implements Observer {
     //------ Additional Methods ------\\
     @Override
     public void update(Observable o, Object arg) {
+        text = "";
+        for(int i = 0; i < m.getAccounts().size(); i++)
+        {
+            text += m.getAccounts().get(i) + "   |   " + m.getTypes().get(i) + "   |   Balance: $" + m.getBalances().get(i) + "\n";
+        }
+        list.setText(text);
         repaint();
     }
     
@@ -75,17 +84,6 @@ public class AccountList extends JFrame implements Observer {
         String text = "Nothing yet!!";
         return text;
     }
-    
-    public String text(ArrayList<String> name, ArrayList<String> type, ArrayList<Integer> bal)
-    {
-        String text = "";
-        for(int i = 0; i < name.size(); i++)
-        {
-            text += name.get(i) + "   |   " + type.get(i) + "   |   Balance: $" + bal.get(i) + "\n";
-        }
-        return text;
-    }
-
 
     public JTextArea getList() {
         return list;

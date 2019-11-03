@@ -33,15 +33,12 @@ public class NewAccountController implements ActionListener {
         if(v.getNewAcc().getAccountName().getText().isEmpty() == false && v.getNewAcc().getDeposit().getText().isEmpty() == false)
         {
             System.out.println("Create button was clicked");
-            m.getAccounts().add(v.getNewAcc().getAccountName().getText());
+            v.getNewAcc().accounts.add(v.getNewAcc().getAccountName().getText());
             v.getNewAcc().getAccountName().setText("");
             m.getTypes().add(v.getNewAcc().getAccountType().getSelectedItem().toString());
-            m.getBalances().add(Integer.parseInt(v.getNewAcc().getDeposit().getText()));
+            v.getNewAcc().balances.add(Integer.parseInt(v.getNewAcc().getDeposit().getText()));
             v.getNewAcc().getDeposit().setText("");
-            AccountListController n = new AccountListController(m, v);
-            n.updateList();/**/
-            ExistingAccountController exist = new ExistingAccountController(m, v);
-            exist.fill();/**/
+            v.getNewAcc().update(m, e);
             m.update();
         }
     }

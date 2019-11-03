@@ -16,7 +16,9 @@ import javax.swing.*;
  */
 public class NewAccount extends JFrame implements Observer {
     //------ Variables ------\\
-    public ArrayList<String> accounts;
+    public ArrayList<String> accounts =  new ArrayList<String>();
+    public ArrayList<Integer> balances =  new ArrayList<Integer>();
+    private Model m;
     private JTextField accountName = new JTextField();
     private JPanel panel = new JPanel();
     private JTextField deposit = new JTextField();
@@ -80,6 +82,7 @@ public class NewAccount extends JFrame implements Observer {
         super("Create New Account");
         setSize(425, 305);
         setLocation(50, 50);
+        this.m = m;
         
         //--- Customize panel ---\\
         panel.setSize(425, 305);
@@ -129,9 +132,15 @@ public class NewAccount extends JFrame implements Observer {
     //------ Additional Methods ------\\
     @Override
     public void update(Observable o, Object arg) {
+        m.setAccounts(accounts);
+        m.setBalances(balances);
         repaint();
     }
 
+    /*public ArrayList<String> getAccounts() {
+        return accounts;
+    }*/
+    
     public JTextField getAccountName() {
         return accountName;
     }

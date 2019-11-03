@@ -16,6 +16,7 @@ import javax.swing.*;
  */
 public class ExistingAccount extends JFrame implements Observer {
      //------ Variables ------\\
+    private Model m;
     private JPanel panel = new JPanel();
     private JComboBox select = new JComboBox();
     private JLabel getAccount, balance;
@@ -88,6 +89,7 @@ public class ExistingAccount extends JFrame implements Observer {
         super("Access Existing Account");
         setSize(425, 305);
         setLocation(50, 370);
+        this.m = m;
         
         //--- Customize panel ---\\
         panel.setSize(425, 305);
@@ -144,6 +146,22 @@ public class ExistingAccount extends JFrame implements Observer {
     //------ Additional Methods ------\\
     @Override
     public void update(Observable o, Object arg) {
+        //--- Select account ---\\
+        select.removeAllItems();
+        for(int i = 0; i < m.getAccounts().size(); i++)
+        {
+            select.addItem(m.getAccounts().get(i).toString());
+        }
+        
+        //--- Balance ---\\
+        for(int i = 0; i < m.getAccounts().size(); i++)
+        {
+            if(select.getSelectedItem().toString().equals(m.getAccounts().get(i)))
+            {
+                accountBalance.setText("" + m.getBalances().get(i));
+                repaint();
+            }
+        }
         repaint();
     }
 

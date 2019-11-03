@@ -21,14 +21,8 @@ public class AccountListController {
     {
         this.m = m;
         this.v = v;
-       //updateList(); 
     }
     
     //------ Additional Methods ------\\
-    
-    public void updateList()
-    {
-        v.getList().getList().setText(v.getList().text(m.getAccounts(), m.getTypes(), m.getBalances()));
-        m.update();
-    }/**/
+   
 }
