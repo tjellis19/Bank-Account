@@ -5,6 +5,9 @@
  */
 package Controller;
 
+import Model.Model;
+import View.View;
+
 /**
  *
  * @author tjell
@@ -16,10 +19,9 @@ public class Controller {
     private AccountListController list;
     
     //------ Constructors ------\\
-    /*
-        newAcc = new NewAccountController();
-        oldAcc = new ExistingAccountController();
-        list = new AccountListController();
-        
-    */
+    public Controller(Model m, View v) {
+        newAcc = new NewAccountController(m, v);
+        list = new AccountListController(m, v);
+        oldAcc = new ExistingAccountController(m, v);
+    }
 }

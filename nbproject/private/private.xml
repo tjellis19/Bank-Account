@@ -5,9 +5,14 @@
         <group>
             <file>file:/C:/Users/tjell/OneDrive/Documents/IST%20311/Bank-Account/src/View/AccountList.java</file>
             <file>file:/C:/Users/tjell/OneDrive/Documents/IST%20311/Bank-Account/src/View/NewAccount.java</file>
+            <file>file:/C:/Users/tjell/OneDrive/Documents/IST%20311/Bank-Account/src/Controller/Controller.java</file>
             <file>file:/C:/Users/tjell/OneDrive/Documents/IST%20311/Bank-Account/src/Application/App.java</file>
+            <file>file:/C:/Users/tjell/OneDrive/Documents/IST%20311/Bank-Account/src/Controller/NewAccountController.java</file>
+            <file>file:/C:/Users/tjell/OneDrive/Documents/IST%20311/Bank-Account/src/Controller/AccountListController.java</file>
             <file>file:/C:/Users/tjell/OneDrive/Documents/IST%20311/Bank-Account/src/View/View.java</file>
+            <file>file:/C:/Users/tjell/OneDrive/Documents/IST%20311/Bank-Account/src/Model/Model.java</file>
             <file>file:/C:/Users/tjell/OneDrive/Documents/IST%20311/Bank-Account/src/View/ExistingAccount.java</file>
+            <file>file:/C:/Users/tjell/OneDrive/Documents/IST%20311/Bank-Account/src/Controller/ExistingAccountController.java</file>
         </group>
     </open-files>
 </project-private>

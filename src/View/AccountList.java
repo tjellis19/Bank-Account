@@ -52,7 +52,8 @@ public class AccountList extends JFrame implements Observer {
         
         //--- Add text area to panel ---\\
         list.setEditable(false);
-        list.setText(text());
+        list.setTabSize(24);
+        list.setText(defaultText());
         list.setBounds(10, 10, 400, 580);
         panel.add(list);
         
@@ -69,11 +70,22 @@ public class AccountList extends JFrame implements Observer {
         repaint();
     }
     
-    private String text()
+    private String defaultText()
     {
         String text = "Nothing yet!!";
         return text;
     }
+    
+    public String text(ArrayList<String> name, ArrayList<String> type, ArrayList<Integer> bal)
+    {
+        String text = "";
+        for(int i = 0; i < name.size(); i++)
+        {
+            text += name.get(i) + "   |   " + type.get(i) + "   |   Balance: $" + bal.get(i) + "\n";
+        }
+        return text;
+    }
+
 
     public JTextArea getList() {
         return list;

@@ -12,8 +12,17 @@ import java.util.*;
  * @author tjell
  */
 public class Model extends Observable{
-    private ArrayList<String> accounts, types, balances;
+    //------ Variables ------\\
+    private ArrayList<String> accounts, types;
+    private ArrayList<Integer> balances;
     
+    //------ Constructors ------\\
+    public Model()
+    {
+        accounts = new ArrayList<String>();
+        types = new ArrayList<String>();
+        balances = new ArrayList<Integer>();        
+    }
     
     //------ Additional Methods ------\\
     public ArrayList<String> getAccounts() {
@@ -32,12 +41,17 @@ public class Model extends Observable{
         this.types = types;
     }
 
-    public ArrayList<String> getBalances() {
+    public ArrayList<Integer> getBalances() {
         return balances;
     }
 
-    public void setBalances(ArrayList<String> balances) {
+    public void setBalances(ArrayList<Integer> balances) {
         this.balances = balances;
     }
     
+    public void update()
+    {
+        setChanged();
+        notifyObservers();
+    }
 }
